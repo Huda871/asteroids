@@ -4,7 +4,7 @@
 //
 
 KEY_CODES = {
-  32: 'space',
+  13: 'space',
   37: 'left',
   38: 'up',
   39: 'right',
@@ -421,6 +421,7 @@ Ship = function () {
     }
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
+        this.delayBeforeBullet = 10;
         for (var i = 0; i < this.bullets.length; i++) {
           if (!this.bullets[i].visible) {
             SFX.laser();
